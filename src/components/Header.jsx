@@ -5,7 +5,7 @@ function Header(props) {
 
   return (
     <div>
-        <Button onClick={() => props.handleMenu('contact')}>Home</Button>
+        <Button onClick={() => props.handleMenu('home')}>Home</Button>
         <Button onClick={() => props.handleMenu('calendar')}>Calendar</Button>
         <Button onClick={() => props.handleMenu('about')}>About</Button>
         <Button onClick={() => props.handleMenu('contact')}>Contact</Button>
