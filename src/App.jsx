@@ -9,6 +9,10 @@ import React from 'react';
 function App() {
   const [page, setPage] = React.useState("");
 
+  function handleMenu(page) {
+    setPage(page);
+  }
+
   function choosePage(page) {
     switch (page) {
       case "calendar":
@@ -27,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header handleMenu={handleMenu}/>
       {choosePage(page)}
 
     </div>
