@@ -1,6 +1,17 @@
 import React from 'react';
+import { auth } from '../firebase';
 
 function Home() {
+
+  const [user, setUser] = React.useState(null);
+
+  React.useEffect(() => {
+  const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      setUser(authUser);
+  });
+
+      return unsubscribe;
+  }, [user]);
 
   return (
     <div>
@@ -15,17 +26,20 @@ function Home() {
           <p><a href='https://www.orthodoxintro.org/'>Introductory Info on the Orthodox Church</a></p>
         </section>
 
-        <section className='loginToView'>
-          <h2>Please sign in to view member resources</h2>
-        </section>
+        {user ? (
+          <section className='memberResources'>
 
-        <section className='memberResources'>
-          <h2>Member Resources</h2>
-          <p><a href="https://firebasestorage.googleapis.com/v0/b/marymarthaschool.appspot.com/o/marymarthacalendar2023.pdf?alt=media&token=7609edbc-2fd6-4a5b-b3ed-6cbfb16648fe">2022-2023 Calendar</a></p>
-          <p><a href="https://firebasestorage.googleapis.com/v0/b/marymarthaschool.appspot.com/o/Co-op%20Family%20Directory%202022-2023.pdf?alt=media&token=9c1b7ae0-7a88-4b65-958c-75f17d1a2e71">Family Directory</a></p>
-          <p><a href="https://firebasestorage.googleapis.com/v0/b/marymarthaschool.appspot.com/o/familygroupings2023.pdf?alt=media&token=a7f86533-2d43-4882-87d7-01fcf0fc17bb">Class Groupings</a></p>
+            <h2>Member Resources</h2>
+            <p><a href="https://firebasestorage.googleapis.com/v0/b/marymarthaschool.appspot.com/o/marymarthacalendar2023.pdf?alt=media&token=7609edbc-2fd6-4a5b-b3ed-6cbfb16648fe">2022-2023 Calendar</a></p>
+            <p><a href="https://firebasestorage.googleapis.com/v0/b/marymarthaschool.appspot.com/o/Co-op%20Family%20Directory%202022-2023.pdf?alt=media&token=9c1b7ae0-7a88-4b65-958c-75f17d1a2e71">Family Directory</a></p>
+            <p><a href="https://firebasestorage.googleapis.com/v0/b/marymarthaschool.appspot.com/o/familygroupings2023.pdf?alt=media&token=a7f86533-2d43-4882-87d7-01fcf0fc17bb">Class Groupings</a></p>
 
-        </section>
+          </section>
+        ) : (
+          <section className='loginToView'>
+            <h2>Please sign in to view member resources</h2>
+          </section>
+        )}
 
         <section className='generalResources'>
           <h2>Additional Resources</h2>
