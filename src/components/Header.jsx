@@ -5,10 +5,11 @@ function Header(props) {
 
   return (
     <div>
+        <img src='marymarthalogo.png'/>
         <Button onClick={() => props.handleMenu('home')}>Home</Button>
-        <Button onClick={() => props.handleMenu('calendar')}>Calendar</Button>
         <Button onClick={() => props.handleMenu('about')}>About</Button>
-        <Button onClick={() => props.handleMenu('contact')}>Contact</Button>
+
+        <Button onClick={() => props.handleLogin()}>Sign in</Button>
     </div>
   );
 }
