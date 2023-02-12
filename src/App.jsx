@@ -5,7 +5,6 @@ import Home from './components/Home';
 import React from 'react';
 import Footer from './components/Footer';
 import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
 import { auth } from './firebase';
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 
@@ -47,17 +46,18 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleMenu={handleMenu} handleOpen={handleOpen} logout={logout}/>
-      {choosePage(page)}
-      <Footer />
 
       <Modal open={loginOpen} onClose={() => setLoginOpen(false)}>
           <form className="modal">
-            <input className="input" value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder='Email'/>
+            <input className="input" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Email'/>
             <input className="input" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='Password'/>
-            <Button onClick={login}>Login</Button>
+            <button onClick={login}>Sign In</button>
           </form>
       </Modal>
+
+      <Header handleMenu={handleMenu} handleOpen={handleOpen} logout={logout}/>
+      {choosePage(page)}
+      <Footer />
     </div>
   );
 }

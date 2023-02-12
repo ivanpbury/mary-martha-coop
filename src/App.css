@@ -26,3 +26,50 @@ p {
   line-height: 2;
   font-size: 1.1rem;
 }
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 350px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	background: #A98E51;
+	padding: 30px 30px 15px 30px;
+	border: 5px solid #7a7345;
+}
+
+.modal input {
+  background: transparent;
+	border: none;
+	border-bottom: 1px dashed #fafafa;
+	width: 80%;
+	outline: none;
+	margin: 10px;
+	font-style: italic;
+  font-size: 1.2rem;
+  font-family: 'Merriweather', serif;
+  color: #f3f3f3;
+}
+
+.modal button {
+	background: #7a7345;
+	border: none;
+	padding: 8px 10px 8px 10px;
+	border-radius: 5px;
+	color: #f3f3f3;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-family: 'Merriweather', serif;
+}
+
+.modal button:hover {
+  background-color: #565131;
+}
+
+::placeholder {
+  color: #FFB5B0;
+}
