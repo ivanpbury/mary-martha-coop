@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { auth } from '../firebase';
+import './Header.css';
 
 function Header(props) {
 
@@ -15,16 +16,17 @@ function Header(props) {
   }, [user]);
 
   return (
-    <div>
-        <img src='marymarthalogo.png'/>
-
-        <Button onClick={() => props.handleMenu('home')}>Home</Button>
-        <Button onClick={() => props.handleMenu('about')}>About</Button>
-        {user ? (
-          <Button onClick={() => props.logout()}>Log Out</Button>
-        ) : (
-          <Button onClick={() => props.handleOpen()}>Sign In</Button>
-        )}
+    <div className='sticky header'>
+        <img className='header-img' src='marymarthalogo2.png'/>
+        <div className='menu-items'>
+          <p className='header-p' onClick={() => props.handleMenu('home')}><a className='header-a' href='#'>Home</a></p>
+          <p className='header-p' onClick={() => props.handleMenu('about')}><a className='header-a' href='#'>About</a></p>
+          {user ? (
+            <p className='header-p' onClick={() => props.logout()}><a className='header-a' href='#'>Log Out</a></p>
+          ) : (
+            <p className='header-p' onClick={() => props.handleOpen()}><a className='header-a' href='#'>Sign In</a></p>
+          )}
+        </div>
     </div>
   );
 }

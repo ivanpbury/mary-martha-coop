@@ -1,0 +1,37 @@
+.story {
+    background-color: #FFB5B0;
+    padding: 50px;
+    color: #343434;
+}
+
+.mission {
+    background-color: #A98E51;
+    padding: 50px;
+    color: #f3f3f3;
+}
+
+.contact {
+    background-color: #d3b687;
+    padding: 50px;
+    color: #343434;
+}
+
+.address {
+    margin-bottom: 25px;
+}
+
+#holy-apostles-link:hover {
+    color: #7a7345;
+}
+
+@media screen and (min-width: 900px) {
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 70%;
+    }
+
+    .address {
+        margin: 0;
+    }
+}

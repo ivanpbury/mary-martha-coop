@@ -1,7 +1,96 @@
 /* Color palette:
-    Old Rose: #bb8581
+    Melon: #FFB5B0
     Sage: #bcb38c
     Reseda Green: #7a7345
-    Satin Sheen Gold: #bb9d59
+    Lion: #A98E51
     Ecru: #dfc18f
 */
+.title-area {
+    background-image: url(/public/orthodox-icon.jpg);
+    background-color: #aaa;
+    background-blend-mode: multiply;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top 65px center;
+    background-attachment: fixed;
+    padding: 40px;
+    padding-bottom: 60px;
+}
+
+h1 {
+    font-size: 7vw;
+    color: #f3f3f3;
+}
+
+.intro {
+    background-color: #FFB5B0;
+    color: #343434;
+    padding: 50px;
+}
+
+.member-resources {
+    background-color: #A98E51;
+    color: #f3f3f3;
+    padding: 50px;
+}
+
+.member-resources p {
+    margin: 20px;
+}
+
+.general-resources {
+    background-color: #d3b687;
+    color: #343434;
+    padding: 50px;
+}
+
+.content-wrap {
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+a, a:visited, a:focus, a:active  {
+    text-decoration: underline;
+    color: inherit;
+    outline: 0;
+}
+
+.intro a:hover {
+    color: #7a7345;
+}
+
+.member-resources a:hover {
+    color: #343434;
+}
+
+.general-resources a:hover {
+    color: #7a7345;
+}
+
+.general-resources p {
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 900px) {
+    .title-area {
+        background-size: cover;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 100px;
+        row-gap: 20px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .title-area {
+        padding: 100px 40px 200px;
+    }
+}

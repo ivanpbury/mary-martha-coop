@@ -1,11 +1,12 @@
 import React from 'react';
+import './Footer.css'
 
 function Footer() {
 
   return (
-    <div>
+    <footer className='footer'>
         <p>© 2023 Mary & Martha Co-op</p>
-    </div>
+    </footer>
   );
 }
 

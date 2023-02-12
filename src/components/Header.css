@@ -1,0 +1,44 @@
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.header {
+    object-fit: contain;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 1;
+    margin-bottom: 0;
+    background-color:#bcb38c;
+}
+
+.menu-items {
+    margin: auto 0;
+    padding: 0;
+}
+
+.header-img {
+    width: 15%;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.header-p {
+    display: inline;
+    margin: 0 15px;
+    color: #343434;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.header-p:hover {
+    color: #bb8581;
+}
+
+.header-a, .header-a:hover, .header-a:visited, .header-a:focus, .header-a:active  {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+}
